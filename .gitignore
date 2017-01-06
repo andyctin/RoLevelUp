@@ -1,3 +1,4 @@
-dir_to_ignore/.vs
-dir_to_ignore/.git
-dir_to_ignore/packages
+.git/
+packages/
+.vs/
+
