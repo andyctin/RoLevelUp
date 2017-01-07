@@ -17,13 +17,13 @@ namespace RoPlus.Repository.Controllers {
     // GET api/Sections
     [HttpGet]
     public IEnumerable<Section> Get() {
-      return _context.Sections.ToList(); ;
+      return _context.Section.ToList(); ;
     }
 
     // GET api/Sections/5
     [HttpGet( "{id}" )]
     public Section Get( int id ) {
-      return _context.Sections.FirstOrDefault( section =>section.Id == id );
+      return _context.Section.FirstOrDefault( section =>section.Id == id );
     }
 
     public void Post( Section entry ) {

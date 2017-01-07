@@ -17,13 +17,13 @@ namespace RoPlus.Repository.Controllers {
     // GET api/Projects
     [HttpGet]
     public IEnumerable<Project> Get() {
-      return _context.Projects.ToList(); ;
+      return _context.Project.ToList(); ;
     }
 
     // GET api/Projects/5
     [HttpGet( "{id}" )]
     public Project Get( int id ) {
-      return _context.Projects.FirstOrDefault( Project =>Project.Id == id );
+      return _context.Project.FirstOrDefault( Project =>Project.Id == id );
     }
 
     public void Post( Project entry ) {

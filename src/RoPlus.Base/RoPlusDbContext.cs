@@ -19,7 +19,7 @@ namespace RoPlus.Base.Model {
         entity.Property( e => e.Description ).IsRequired();
       } );
     }
-    public virtual DbSet<Section> Sections { get; set; }
-    public virtual DbSet<Project> Projects { get; set; }
+    public virtual DbSet<Section> Section { get; set; }
+    public virtual DbSet<Project> Project { get; set; }
   }
 }
