@@ -12,7 +12,14 @@ namespace RoPlus.Base.Model {
         entity.Property( e => e.Name ).IsRequired();
         entity.Property( e => e.Description ).IsRequired();
       } );
+
+      modelBuilder.Entity<Project>( entity => {
+        entity.Property( e => e.Id ).IsRequired();
+        entity.Property( e => e.Name ).IsRequired();
+        entity.Property( e => e.Description ).IsRequired();
+      } );
     }
     public virtual DbSet<Section> Sections { get; set; }
+    public virtual DbSet<Project> Projects { get; set; }
   }
 }

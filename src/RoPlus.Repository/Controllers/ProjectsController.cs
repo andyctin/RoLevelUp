@@ -7,34 +7,34 @@ using RoPlus.Repository.Clients;
 
 namespace RoPlus.Repository.Controllers {
   [Route( "api/[controller]" )]
-  public class SectionsController: Controller, IRepository<Section> {
+  public class ProjectsController: Controller, IRepository<Project> {
     private RoPlusDbContext _context;
 
-    public SectionsController( RoPlusDbContext context ) {
+    public ProjectsController( RoPlusDbContext context ) {
       _context = context;
     }
 
-    // GET api/Sections
+    // GET api/Projects
     [HttpGet]
-    public IEnumerable<Section> Get() {
-      return _context.Sections.ToList(); ;
+    public IEnumerable<Project> Get() {
+      return _context.Projects.ToList(); ;
     }
 
-    // GET api/Sections/5
+    // GET api/Projects/5
     [HttpGet( "{id}" )]
-    public Section Get( int id ) {
-      return _context.Sections.FirstOrDefault( section =>section.Id == id );
+    public Project Get( int id ) {
+      return _context.Projects.FirstOrDefault( Project =>Project.Id == id );
     }
 
-    public void Post( Section entry ) {
+    public void Post( Project entry ) {
       throw new NotImplementedException();
     }
 
-    public void Put( Section entry ) {
+    public void Put( Project entry ) {
       throw new NotImplementedException();
     }
 
-    public void Delete( Section entry ) {
+    public void Delete( Project entry ) {
       throw new NotImplementedException();
     }
   }
