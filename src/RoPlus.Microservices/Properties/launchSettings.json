@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "web": {
+      "commandName": "web",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "ConsoleApp1": {
+      "commandName": "Project"
+    },
+    "RoPlus.Microservices": {
+      "commandName": "Project"
+    }
+  }
+}

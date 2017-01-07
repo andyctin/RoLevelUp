@@ -9,7 +9,7 @@ export class FetchDataComponent {
     public forecasts: WeatherForecast[];
 
     constructor(http: Http) {
-        http.get('/api/SampleData/WeatherForecasts').subscribe(result => {
+        http.get('/api/sections/WeatherForecasts').subscribe(result => {
             this.forecasts = result.json();
         });
     }

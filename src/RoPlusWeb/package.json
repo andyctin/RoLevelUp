@@ -1,5 +1,5 @@
 {
-  "name": "Angular2Spa",
+  "name": "RoPlusWeb",
   "version": "0.0.0",
   "dependencies": {
     "@angular/common": "2.0.0",
@@ -17,7 +17,7 @@
     "angular2-universal-polyfills": "~2.0.10",
     "aspnet-prerendering": "^1.0.6",
     "aspnet-webpack": "^1.0.11",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "4.0.0-alpha.6",
     "font-awesome": "^4.6.3",
     "css": "^2.2.1",
     "css-loader": "^0.25.0",
