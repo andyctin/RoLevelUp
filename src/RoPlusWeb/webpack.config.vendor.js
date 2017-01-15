@@ -6,7 +6,7 @@ var extractCSS = new ExtractTextPlugin('vendor.css');
 
 module.exports = {
     resolve: {
-        extensions: [ '', '.js' ]
+        extensions: ['', '.js']
     },
     module: {
         loaders: [
@@ -26,12 +26,12 @@ module.exports = {
             '@angular/platform-server',
             'angular2-universal',
             'angular2-universal-polyfills',
+            'jquery',
             'bootstrap',
             'bootstrap/dist/css/bootstrap.css',
             'font-awesome/css/font-awesome.css',
             'es6-shim',
             'es6-promise',
-            'jquery',
             'zone.js',
         ]
     },

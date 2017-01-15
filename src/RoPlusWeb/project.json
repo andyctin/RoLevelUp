@@ -1,9 +1,12 @@
 {
   "dependencies": {
-    "Microsoft.NETCore.App": "1.0.0",
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.0.0-*"
+    },
     "Microsoft.AspNetCore.AngularServices": "1.0.0-*",
     "Microsoft.AspNetCore.Razor.Tools": {
-      "version": "1.0.0-preview2-003131",
+      "version": "1.0.0-preview2-final",
       "type": "build"
     },
     "Microsoft.AspNetCore.Diagnostics": "1.1.0",
@@ -17,14 +20,17 @@
     "Microsoft.Extensions.Logging": "1.1.0",
     "Microsoft.Extensions.Logging.Console": "1.1.0",
     "Microsoft.Extensions.Logging.Debug": "1.1.0",
-    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0"  },
+    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0",
+    "System.Runtime.Serialization.Xml": "4.3.0",
+    "RoPlus.Base": "1.0.0-*",
+    "RoPlus.Repository.Clients": "1.0.0-*"
+  },
 
   "tools": {
     "Microsoft.AspNetCore.Razor.Tools": "1.0.0-preview2-003131",
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-003131",
     "Microsoft.DotNet.Watcher.Tools": "1.0.0-preview2-003131"
   },
-
   "frameworks": {
     "netcoreapp1.0": {
       "imports": [
@@ -33,7 +39,6 @@
       ]
     }
   },
-
   "buildOptions": {
     "emitEntryPoint": true,
     "preserveCompilationContext": true
@@ -70,7 +75,7 @@
   },
 
   "runtimes": {
-    "win10-x64": {},
-    "osx.10.10-x64": {}
+    "win10-x86": {},
+    "win10-x64": {}
   }
 }

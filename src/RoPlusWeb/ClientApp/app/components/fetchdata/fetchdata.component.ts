@@ -6,18 +6,33 @@ import { Http } from '@angular/http';
     template: require('./fetchdata.component.html')
 })
 export class FetchDataComponent {
-    public forecasts: WeatherForecast[];
-
+    public resultList: ListItems[];
+    public activeControllers: SelectOptions[] = [{ name: "Sections" }, { name: "Projects" }]
+    public selectedController: SelectOptions = this.activeControllers[0];
+    public _http: Http
     constructor(http: Http) {
-        http.get('/api/sections/WeatherForecasts').subscribe(result => {
-            this.forecasts = result.json();
+        this._http = http;
+        this.RetriveData();
+    }
+
+    UpdateSelectedController(newSelection) {
+        this.selectedController = newSelection
+        this.RetriveData();
+    }
+
+    RetriveData() {
+        this._http.get('/api/' + this.selectedController.name + '/get').subscribe(result => {
+            this.resultList = result.json();
         });
     }
 }
+interface SelectOptions {
+    name: string;
+}
 
-interface WeatherForecast {
-    dateFormatted: string;
-    temperatureC: number;
-    temperatureF: number;
-    summary: string;
+interface ListItems {
+    id: number;
+    name: string;
+    description: string;
+    isActive: boolean;
 }

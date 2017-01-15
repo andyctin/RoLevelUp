@@ -1,29 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RoPlus.Base.Model;
 using RoPlus.Repository.Clients;
 
 namespace RoPlus.Repository.Controllers {
   [Route( "api/[controller]" )]
-  public class SectionsController: Controller, IRepository<Section> {
+  public class SectionController: Controller, IRepository<Section> {
     private RoPlusDbContext _context;
 
-    public SectionsController( RoPlusDbContext context ) {
+    public SectionController( RoPlusDbContext context ) {
       _context = context;
     }
 
     // GET api/Sections
     [HttpGet]
-    public IEnumerable<Section> Get() {
-      return _context.Section.ToList(); ;
+    public async Task<IEnumerable<Section>> Get() {
+      return await _context.Section.ToListAsync(); ;
     }
 
     // GET api/Sections/5
     [HttpGet( "{id}" )]
-    public Section Get( int id ) {
-      return _context.Section.FirstOrDefault( section =>section.Id == id );
+    public async Task<Section> Get( int id ) {
+      return await _context.Section.FirstOrDefaultAsync( section =>section.Id == id );
     }
 
     public void Post( Section entry ) {

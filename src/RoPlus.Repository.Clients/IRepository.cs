@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace RoPlus.Repository.Clients {
   public interface IRepository<T> {
 
-    IEnumerable<T> Get();
-    T Get( int id );
+    Task<IEnumerable<T>> Get();
+    Task<T> Get( int id );
 
     void Post( T entry );
 

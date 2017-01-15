@@ -1,29 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RoPlus.Base.Model;
 using RoPlus.Repository.Clients;
 
 namespace RoPlus.Repository.Controllers {
   [Route( "api/[controller]" )]
-  public class ProjectsController: Controller, IRepository<Project> {
+  public class ProjectController: Controller, IRepository<Project> {
     private RoPlusDbContext _context;
 
-    public ProjectsController( RoPlusDbContext context ) {
+    public ProjectController( RoPlusDbContext context ) {
       _context = context;
     }
 
     // GET api/Projects
     [HttpGet]
-    public IEnumerable<Project> Get() {
-      return _context.Project.ToList(); ;
+    public async Task<IEnumerable<Project>> Get() {
+      return await _context.Project.ToListAsync();
     }
 
     // GET api/Projects/5
     [HttpGet( "{id}" )]
-    public Project Get( int id ) {
-      return _context.Project.FirstOrDefault( Project =>Project.Id == id );
+    public async Task<Project> Get( int id ) {
+      return await _context.Project.FirstOrDefaultAsync( Project =>Project.Id == id );
     }
 
     public void Post( Project entry ) {

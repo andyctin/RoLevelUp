@@ -11,6 +11,7 @@ namespace RoPlus.Base.Model {
         entity.Property( e => e.Id ).IsRequired();
         entity.Property( e => e.Name ).IsRequired();
         entity.Property( e => e.Description ).IsRequired();
+        entity.Property( e => e.IsActive ).IsRequired();
       } );
 
       modelBuilder.Entity<Project>( entity => {
