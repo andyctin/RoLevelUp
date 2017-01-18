@@ -1,6 +1,6 @@
 {
-  "name": "RoPlusWeb",
-  "version": "0.0.0",
+    "name": "RoPlusWeb",
+    "version": "0.0.0",
     "dependencies": {
         "@angular/common": "2.0.0",
         "@angular/compiler": "2.0.0",
@@ -17,15 +17,15 @@
         "angular2-universal-polyfills": "~2.0.10",
         "aspnet-prerendering": "^1.0.6",
         "aspnet-webpack": "^1.0.11",
-        "jquery": "^3.3.1",
-        "bootstrap": "4.0.0-alpha.6",
-        "font-awesome": "^4.6.3",
+        "jquery": "^3.1.1",
+        "bootstrap": "^4.0.0-alpha.6",
         "css": "^2.2.1",
         "css-loader": "^0.25.0",
         "es6-shim": "^0.35.1",
         "expose-loader": "^0.7.1",
         "extract-text-webpack-plugin": "^1.0.1",
         "file-loader": "^0.9.0",
+        "font-awesome": "^4.6.3",
         "isomorphic-fetch": "^2.2.1",
         "preboot": "^4.5.2",
         "raw-loader": "^0.5.1",
@@ -38,8 +38,8 @@
         "webpack": "^1.12.14",
         "webpack-externals-plugin": "^1.0.0",
         "webpack-hot-middleware": "^2.10.0",
-        "webpack-node-externals": "^1.4.3",
         "webpack-merge": "^0.14.1",
+        "webpack-node-externals": "^1.4.3",
         "zone.js": "^0.6.21"
     }
 }

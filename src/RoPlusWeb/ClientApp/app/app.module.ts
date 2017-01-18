@@ -5,6 +5,7 @@ import { AppComponent } from './components/app/app.component'
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { FormsModule } from '@angular/forms';
 
@@ -13,6 +14,7 @@ import { FormsModule } from '@angular/forms';
     declarations: [
         AppComponent,
         NavMenuComponent,
+        CarouselComponent,
         CounterComponent,
         FetchDataComponent,
         HomeComponent

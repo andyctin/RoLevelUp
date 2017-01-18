@@ -18,6 +18,8 @@ namespace RoPlus.Base.Model {
         entity.Property( e => e.Id ).IsRequired();
         entity.Property( e => e.Name ).IsRequired();
         entity.Property( e => e.Description ).IsRequired();
+        entity.Property( e => e.ImageUrl ).IsRequired();
+        entity.Property( e => e.Code ).IsRequired();
       } );
     }
     public virtual DbSet<Section> Section { get; set; }

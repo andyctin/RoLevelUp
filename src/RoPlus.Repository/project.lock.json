@@ -3,6 +3,15 @@
   "version": 2,
   "targets": {
     ".NETCoreApp,Version=v1.0": {
+      "bootstrap/4.0.0-alpha6": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "[1.9.1, 4.0.0)"
+        }
+      },
+      "jQuery/1.9.1": {
+        "type": "package"
+      },
       "Libuv/1.9.1": {
         "type": "package",
         "dependencies": {
@@ -3955,6 +3964,15 @@
       }
     },
     ".NETCoreApp,Version=v1.0/win10-x64": {
+      "bootstrap/4.0.0-alpha6": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "[1.9.1, 4.0.0)"
+        }
+      },
+      "jQuery/1.9.1": {
+        "type": "package"
+      },
       "Libuv/1.9.1": {
         "type": "package",
         "dependencies": {
@@ -8024,6 +8042,15 @@
       }
     },
     ".NETCoreApp,Version=v1.0/win10-x86": {
+      "bootstrap/4.0.0-alpha6": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "[1.9.1, 4.0.0)"
+        }
+      },
+      "jQuery/1.9.1": {
+        "type": "package"
+      },
       "Libuv/1.9.1": {
         "type": "package",
         "dependencies": {
@@ -12094,6 +12121,46 @@
     }
   },
   "libraries": {
+    "bootstrap/4.0.0-alpha6": {
+      "sha512": "wOT8R4w867bZfk6m1k4L15PjOkpZ56tWXZEgWvPyw7C/nr6PNzHYT/2HRRgNRpHD2TvCQHNCagLiyfB9XUY2qQ==",
+      "type": "package",
+      "path": "bootstrap/4.0.0-alpha6",
+      "files": [
+        "bootstrap.4.0.0-alpha6.nupkg.sha512",
+        "bootstrap.nuspec",
+        "content/Content/bootstrap-grid.css",
+        "content/Content/bootstrap-grid.css.map",
+        "content/Content/bootstrap-grid.min.css",
+        "content/Content/bootstrap-grid.min.css.map",
+        "content/Content/bootstrap-reboot.css",
+        "content/Content/bootstrap-reboot.css.map",
+        "content/Content/bootstrap-reboot.min.css",
+        "content/Content/bootstrap-reboot.min.css.map",
+        "content/Content/bootstrap.css",
+        "content/Content/bootstrap.css.map",
+        "content/Content/bootstrap.min.css",
+        "content/Content/bootstrap.min.css.map",
+        "content/Scripts/bootstrap.js",
+        "content/Scripts/bootstrap.min.js"
+      ]
+    },
+    "jQuery/1.9.1": {
+      "sha512": "HiX9icLyiJGgiL5EOIn0d1MBPHVV2M9mzWT4mANdniDNR51RvAFTyKEXEd2+5yQJ4PJ5xePOR61Vjj/omQzYcw==",
+      "type": "package",
+      "path": "jQuery/1.9.1",
+      "files": [
+        "Content/Scripts/jquery-1.9.1-vsdoc.js",
+        "Content/Scripts/jquery-1.9.1.js",
+        "Content/Scripts/jquery-1.9.1.min.js",
+        "Content/Scripts/jquery-1.9.1.min.map",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/jquery-1.9.1.intellisense.js",
+        "Tools/uninstall.ps1",
+        "jQuery.1.9.1.nupkg.sha512",
+        "jQuery.nuspec"
+      ]
+    },
     "Libuv/1.9.1": {
       "sha512": "uqX2Frwf9PW8MaY7PRNY6HM5BpW1D8oj1EdqzrmbEFD5nH63Yat3aEjN/tws6Tw6Fk7LwmLBvtUh32tTeTaHiA==",
       "type": "package",
@@ -19490,7 +19557,8 @@
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 1.1.0",
       "Microsoft.NETCore.App >= 1.0.0-*",
       "RoPlus.Base >= 1.0.0-*",
-      "RoPlus.Repository.Clients >= 1.0.0-*"
+      "RoPlus.Repository.Clients >= 1.0.0-*",
+      "bootstrap >= 4.0.0-alpha6"
     ],
     ".NETCoreApp,Version=v1.0": []
   },
