@@ -1,0 +1,19 @@
+.carousel {
+    height: Calc(100% - 50p);
+    width: auto;
+}
+
+.slide-img {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .slide-img {
+        height: 768px;
+    }
+}
+@media (max-width: 767px) {
+    .slide-img {
+        height: 200px;
+    }
+}

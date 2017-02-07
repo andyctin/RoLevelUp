@@ -14,6 +14,8 @@ var sharedConfig = {
     },
     module: {
         loaders: [
+             { test: /bootstrap.+\.(jsx|js)$/, loader: 'imports-loader?jQuery=jquery,$=jquery,this=>window' },
+            { test: require.resolve("jquery"), loader: "expose?$!expose?jQuery" },
             { test: /\.ts$/, include: /ClientApp/, loader: 'ts', query: { silent: true } },
             { test: /\.html$/, loader: 'raw' },
             { test: /\.css$/, loader: 'to-string!css' },
@@ -28,6 +30,12 @@ var clientBundleConfig = merge(sharedConfig, {
     output: { path: path.join(__dirname, './wwwroot/dist') },
     devtool: isDevBuild ? 'inline-source-map' : null,
     plugins: [
+         new webpack.ProvidePlugin({
+             jQuery: 'jquery',
+             $: 'jquery',
+             jquery: 'jquery',
+             "window.Tether": 'tether'
+         }),
         new webpack.DllReferencePlugin({
             context: __dirname,
             manifest: require('./wwwroot/dist/vendor-manifest.json')
@@ -38,6 +46,13 @@ var clientBundleConfig = merge(sharedConfig, {
         new webpack.optimize.UglifyJsPlugin()
     ])
 });
+
+// Force Bootstrap to pick up on Tether
+clientBundleConfig.plugins.push(new webpack.ProvidePlugin({
+    tether: 'tether',
+    Tether: 'tether',
+    'window.Tether': 'tether',
+}))
 
 // Configuration for server-side (prerendering) bundle suitable for running in Node
 var serverBundleConfig = merge(sharedConfig, {

@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using RoPlus.Base.Model;
+using RoPlus.Base.Models;
 using RoPlus.Repository.Clients;
 using RoPlusWeb.Constants;
 
-namespace RoPlusAngularWeb.Controllers {
+namespace RoPlusWeb.Controllers {
   [Route( "api/[controller]" )]
   public class SectionsController: Controller {
     private RepositoryClient<Section> _repository;

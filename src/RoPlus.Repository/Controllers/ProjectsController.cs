@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using RoPlus.Base.Model;
+using RoPlus.Base.Models;
 using RoPlus.Repository.Clients;
 
 namespace RoPlus.Repository.Controllers {

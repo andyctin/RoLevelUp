@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using RoPlus.Base.Model;
+using RoPlus.Base.Models;
 
 namespace RoPlus.Repository {
   public class Startup {

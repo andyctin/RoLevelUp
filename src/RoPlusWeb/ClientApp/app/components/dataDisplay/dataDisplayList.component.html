@@ -1,0 +1,36 @@
+<div class="col-md-12 pt-sm-5">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h1>{{selectedController.name}}</h1>
+            <p>This component demonstrates fetching data from the server.</p>
+            <p *ngIf="!resultList"><em>Loading...</em></p>
+            <label>
+                Select what to retrieve from the server
+                <select class="form-control" [ngModel]="selectedController" (ngModelChange)="UpdateSelectedController($event)" name="Api Selection">
+                    <option [ngValue]="i" *ngFor="let i of activeControllers">{{i.name}}</option>
+                </select>
+            </label>
+        </div>
+        <table class='panel-body table table-hover' *ngIf="resultList">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Active</th>
+                    <th>isNotSometing</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of resultList">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.description }}</td>
+                    <td>{{ item.isActive }}</td>
+                    <td>{{ item.isNotSometing }}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

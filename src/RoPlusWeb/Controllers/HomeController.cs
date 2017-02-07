@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace RoPlusAngularWeb.Controllers {
+namespace RoPlusWeb.Controllers {
   public class HomeController : Controller
     {
         public IActionResult Index()

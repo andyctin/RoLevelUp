@@ -3,9 +3,9 @@ import { Http } from '@angular/http';
 
 @Component({
     selector: 'fetchdata',
-    template: require('./fetchdata.component.html')
+    template: require('./DataDisplayList.component.html')
 })
-export class FetchDataComponent {
+export class DataDisplayListComponent {
     public resultList: ListItems[];
     public activeControllers: SelectOptions[] = [{ name: "Sections" }, { name: "Projects" }]
     public selectedController: SelectOptions = this.activeControllers[0];
@@ -35,4 +35,5 @@ interface ListItems {
     name: string;
     description: string;
     isActive: boolean;
+    isNotSomething: boolean;
 }
