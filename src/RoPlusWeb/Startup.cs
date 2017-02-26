@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.SpaServices.Webpack;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -32,9 +33,7 @@ namespace RoPlusWeb {
             AppSettings.Instance.LoadConfiguration( Configuration );
             services.AddApplicationInsightsTelemetry( Configuration );
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-              .AddEntityFrameworkStores<RoPlusDbContext>()
-              .AddDefaultTokenProviders();
+            ConfigureIdentity( services );
 
             // Add framework services.
             services.AddMvc();
@@ -42,6 +41,24 @@ namespace RoPlusWeb {
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+        }
+
+        private void ConfigureIdentity( IServiceCollection services ) {
+
+            // Add framework services.
+            services.AddDbContext<RoPlusDbContext>( options =>
+                 options.UseSqlServer( Configuration.GetConnectionString( "RoPlus" ) ) );
+
+            services.AddIdentity<ApplicationUser, IdentityRole>(options=> {
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = true;
+                options.Password.RequiredLength = 6;
+            } )
+                .AddEntityFrameworkStores<RoPlusDbContext>()
+                .AddDefaultTokenProviders();
+
         }
 
         public void Configure( IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory ) {

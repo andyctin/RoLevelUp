@@ -10,10 +10,6 @@ namespace RoPlus.Base.Models {
         protected override void OnModelCreating( ModelBuilder modelBuilder ) {
             base.OnModelCreating( modelBuilder );
 
-            // Customize the ASP.NET Identity model and override the defaults if needed.
-            // For example, you can rename the ASP.NET Identity table names and more.
-            // Add your customizations after calling base.OnModelCreating(builder);
-
             modelBuilder
                 .HasAnnotation( "ProductVersion", "1.0.1" )
                 .HasAnnotation( "SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn );
@@ -63,7 +59,7 @@ namespace RoPlus.Base.Models {
                     .IsUnique()
                     .HasName( "UserNameIndex" );
 
-                entity.ToTable( "AspNetUsers" );
+                entity.ToTable( "Account_Users" );
             } );
 
             modelBuilder.Entity<IdentityRole>( entity => {
@@ -83,7 +79,7 @@ namespace RoPlus.Base.Models {
                 entity.HasIndex( "NormalizedName" )
                     .HasName( "RoleNameIndex" );
 
-                entity.ToTable( "AspNetRoles" );
+                entity.ToTable( "Account_Roles" );
             } );
 
             modelBuilder.Entity<IdentityRoleClaim<string>>( entity => {
@@ -101,7 +97,7 @@ namespace RoPlus.Base.Models {
 
                 entity.HasIndex( "RoleId" );
 
-                entity.ToTable( "AspNetRoleClaims" );
+                entity.ToTable( "Account_RoleClaims" );
             } );
 
             modelBuilder.Entity<IdentityUserClaim<string>>( entity => {
@@ -119,7 +115,7 @@ namespace RoPlus.Base.Models {
 
                 entity.HasIndex( "UserId" );
 
-                entity.ToTable( "AspNetUserClaims" );
+                entity.ToTable( "Account_UserClaims" );
             } );
 
             modelBuilder.Entity<IdentityUserLogin<string>>( entity => {
@@ -136,7 +132,7 @@ namespace RoPlus.Base.Models {
 
                 entity.HasIndex( "UserId" );
 
-                entity.ToTable( "AspNetUserLogins" );
+                entity.ToTable( "Account_UserLogins" );
             } );
 
             modelBuilder.Entity<IdentityUserRole<string>>( entity => {
@@ -150,7 +146,7 @@ namespace RoPlus.Base.Models {
 
                 entity.HasIndex( "UserId" );
 
-                entity.ToTable( "AspNetUserRoles" );
+                entity.ToTable( "Account_UserRoles" );
             } );
 
             modelBuilder.Entity<IdentityUserToken<string>>( entity => {
@@ -164,7 +160,7 @@ namespace RoPlus.Base.Models {
 
                 entity.HasKey( "UserId", "LoginProvider", "Name" );
 
-                entity.ToTable( "AspNetUserTokens" );
+                entity.ToTable( "Account_UserTokens" );
             } );
 
             modelBuilder.Entity( "Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", entity => {
